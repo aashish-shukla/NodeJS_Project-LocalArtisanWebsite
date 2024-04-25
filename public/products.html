@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" media="screen and (max-width: 820px)" href="css/mobile.css">
+    <script src="https://kit.fontawesome.com/13df28b11c.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
+    <style>
+        /* Search Bar Styles */
+        .search-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            outline: none;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: #007bff;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .modal-content label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .modal-content input[type="text"],
+        .modal-content input[type="number"],
+        .modal-content select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .modal-content button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .modal-content button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <title>Local Artisan Marketplace</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html" class="current">Products</a></li>
+                <h1 class="logo"><a href="index.html">Local Artisan Marketplace</a></h1>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!-- Add Product Button -->
+                <li><button id="add-product-btn">Add Product</button></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+
+        <!-- Modal Form -->
+        <div id="add-product-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add Product</h2>
+                <form id="add-product-form">
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" name="product-name" required>
+                    <label for="product-price">Price</label>
+                    <input type="number" id="product-price" name="product-price" required>
+                    <label for="product-artisan">Artisan</label>
+                    <input type="text" id="product-artisan" name="product-artisan" required>
+                    <label for="product-category">Category</label>
+                    <select id="product-category" name="product-category" required>
+                        <option value="anime">Anime</option>
+                        <option value="handcraft">Handcraft</option>
+                        <option value="portraits">Portraits</option>
+                    </select>
+                    <label for="product-image">Image URL</label>
+                    <input type="text" id="product-image" name="product-image" required>
+                    <button type="submit">Add Product</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search products...">
+            <button id="search-btn" class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+
+        <nav id="products-nav">
+            <ul>
+                <li><a href="#" data-category="anime">Anime</a></li>
+                <li><a href="#" data-category="handcraft">Handcraft</a></li>
+                <li><a href="#" data-category="portraits">Portraits</a></li>
+            </ul>
+        </nav>
+
+        <h3>Listed Products</h3>
+
+        <section id="product-list" class="item-container py-1">
+            <!-- Product cards will be dynamically populated here -->
+        </section>
+    </div>
+
+    <footer id="footer" class="text-center">
+        &copy; 2024-All rights reserved. Local Artisan Marketplace - by Aashish.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,433 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.item-container .product-card {
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.item-container .product-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.item-container .product-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.item-container .product-card p {
+    font-size: 1.25rem;
+    color: #666;
+}
+
+body {
+    font-family: 'Chivo', sans-serif;
+    font-weight: 300;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* utilities */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.py-1 {
+    padding: 1.5rem 0;
+}
+
+.py-2 {
+    padding: 2rem 0;
+}
+
+.py-3 {
+    padding: 3rem 0;
+}
+
+.p-1 {
+    padding: 1.5rem;
+}
+
+.p-2 {
+    padding: 2rem;
+}
+
+.p-3 {
+    padding: 3rem;
+}
+
+.l-heading {
+    font-size: 4rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+}
+
+.m-heading {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+}
+
+.s-heading {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+}
+
+.lead {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    color: #333;
+    display: block;
+    font-size: 1.5rem;
+    padding: 1rem 1.25rem;
+    border: solid 1px #333;
+}
+
+.btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Navbar */
+#navbar .logo a {
+    color: #333;
+    font-size: 2rem;
+    display: block;
+    margin: 0.10rem 2rem;
+}
+
+#navbar {
+    padding: 0.25rem 5rem;
+    background-color: #f3f3f3;
+    position: sticky;
+    top: 0px;
+}
+
+#navbar .container {
+    display: flex;
+    justify-content: center;
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+#navbar ul li a {
+    display: block;
+    color: #333;
+    padding: 0.75rem;
+    margin: 0.55rem;
+}
+
+#navbar ul li a:hover,
+#navbar ul li a.current {
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Showcase-header */
+#showcase-header {
+    background: url('/showcasepots.jpg') no-repeat center center/cover;
+    height: 100vh;
+}
+
+#showcase-header .container {
+    height: 100%;
+}
+
+#showcase-header .showcase-content {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* overlay */
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+/* What we sell */
+#what {
+    background-color: #f3f3f3;
+}
+
+#what .container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#what .container .what-product {
+    margin: 0.5rem 0.5rem;
+    padding: 1rem;
+    width: 33.33%;
+    text-align: center;
+}
+
+#what .container .what-product .img {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    margin-bottom: 1rem;
+}
+
+#what .container .what-product:hover {
+    background-color: #ddd;
+}
+
+/* footer */
+#footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+/* products.html */
+
+#products-nav {
+    display: flex;
+    justify-content: center;
+    background: #f4f4f4;
+    margin: 1rem 0.25rem;
+    position: sticky;
+    top: 0px;
+}
+
+#products-nav>ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+}
+
+#products-nav>ul>li>a {
+    color: #333;
+    display: block;
+    padding: 1rem 2rem;
+    margin: 0.25rem 5rem;
+}
+
+#products-nav>ul>li>a:hover,
+#products-nav>ul>li>a.current {
+    font-weight: 900;
+}
+
+.item-container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.products-title {
+    width: 100%;
+    border: solid 1px #ddd;
+    color: #333;
+    padding: 1rem;
+}
+
+.item-card {
+    text-align: center;
+    border: solid 1px #ddd;
+    margin: 0.5rem;
+    padding: 1rem;
+    flex-basis: 32%;
+}
+
+.item-card img {
+    width: 100%;
+}
+
+.item-card a.btn {
+    margin: 0 auto;
+}
+
+/* About */
+
+#about {
+    display: flex;
+}
+
+#about .about-info {
+    display: flex;
+    flex-direction: column;
+    height: 1000px;
+    width: 50%;
+    margin: 1rem;
+    line-height: 2rem;
+    text-align: center;
+}
+
+.founder-img {
+    margin: 0 auto;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    background: url('../img/person.jpg') no-repeat center center/cover;
+}
+
+#about .about-img {
+    border-radius: 20px;
+    width: 50%;
+    background: url('../img/showcasepots.jpg') no-repeat center center/cover;
+}
+
+#contact {
+    display: flex;
+    font-size: 1.5rem;
+    height: 100vh;
+}
+
+.contact-background:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/showcasepots.jpg') no-repeat center center/cover;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+#contact .contact-form {
+    border-right: solid 1px #333;
+    padding: 1rem;
+    width: 50%;
+}
+
+.form-group {
+    margin: 1.5rem 1rem;
+}
+
+#contact .contact-form .form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+#contact .contact-form .form-group input,
+#contact .contact-form .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: solid 1px #333;
+}
+
+#contact .contact-address {
+    padding: 1rem;
+    width: 50%;
+}
+
+/* View Product */
+#product-detail {
+    display: flex;
+    margin: 1rem;
+}
+
+#product-detail .product-img {
+    text-align: center;
+    width: 40%;
+    margin: 0.5rem;
+    padding: 0.25rem;
+}
+
+#product-detail .product-img img {
+    width: 90%;
+}
+
+#product-detail .product-meta {
+    width: 60%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+#product-detail .product-meta .product-price {
+    line-height: 1.5rem;
+    font-size: 2rem;
+    display: block;
+    margin: 2rem 0rem;
+}
+
+#product-detail .product-meta .product-description {
+    font-size: 1.5rem;
+    margin: 2rem 0rem;
+}
+
+#product-detail .product-meta .product-content {
+    font-size: 1.5rem;
+    margin: 2rem 0rem;
+}
+
+#product-detail .product-meta .product-content ul {
+    list-style: numeric;
+}
+
+#product-detail .product-meta .buy-now {
+    display: inline-block;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
