@@ -178,7 +178,7 @@ app.post('/api/login', async (req, res) => {
         if (user) {
             const match = await bcrypt.compare(password, user.password);
             if (match) {
-                res.redirect('/index.html'); // Redirect to index.html upon successful login
+                res.redirect('/home.html'); // Redirect to index.html upon successful login
             } else {
                 res.status(401).send('Invalid username or password');
             }
@@ -198,7 +198,7 @@ app.post('/api/signup', async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new User({ username, password: hashedPassword });
         await newUser.save();
-        res.redirect('/index.html'); // Redirect to index.html upon successful signup
+        res.redirect('/home.html'); // Redirect to index.html upon successful signup
     } catch (error) {
         console.error("Error during signup:", error);
         res.status(500).json({ error: "Internal Server Error" });
